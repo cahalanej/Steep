@@ -1,4 +1,6 @@
 Steep::Application.routes.draw do
+  get "home/index"
+
   get "black/index"
 
   get "black/show"
