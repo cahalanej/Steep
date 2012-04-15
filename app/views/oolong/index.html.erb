@@ -1,2 +1,114 @@
-<h1>Oolong#index</h1>
-<p>Find me in app/views/oolong/index.html.erb</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Oolong Tea</title>
+<link rel="stylesheet" type="text/css" href="/assets/oolong.css.erb" />
+<style type="text/css">
+#login {
+	position:absolute;
+	width:197px;
+	height:212px;
+	z-index:1;
+	left: 1274px;
+	top: -7px;
+}
+#signup {
+	position:absolute;
+	width:223px;
+	height:239px;
+	z-index:2;
+	left: 1415px;
+	top: -15px;
+}
+#main {
+	position:absolute;
+	width:1882px;
+	height:425px;
+	z-index:3;
+	left: 16px;
+	top: 366px;
+}
+#credits {
+	position:absolute;
+	width:252px;
+	height:185px;
+	z-index:2;
+	left: -41px;
+	top: 256px;
+}
+#bigoolong {
+	position:absolute;
+	width:454px;
+	height:559px;
+	z-index:3;
+	left: 275px;
+	top: -117px;
+}
+#paperbox {
+	position:absolute;
+	width:784px;
+	height:567px;
+	z-index:4;
+	left: 725px;
+	top: -94px;
+}
+#like {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+	left: 506px;
+	top: 431px;
+}
+</style>
+</head>
+
+<body>
+<!--<img src="images/background.png" width="4800" height="3600" />-->
+<div class="header">
+<div id="title">
+     </div><!--end title-->
+     
+    <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), users_path%></div> 
+    <!--end login-->
+        
+  	<div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div> 
+    <!--end signup-->
+</div>
+<div id="main">
+
+  <div id="credits"></div>
+  <div id="bigoolong"></div>
+  <div id="paperbox">  <div id = "txt">  <table>
+  <tr>
+    <!--<th>Typename</th>-->
+    <!--<th>Image</th> -->
+    <th>Representative Teas</th>
+    <!-- <th>Article</th> -->
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tea_types.each do |tea_type| %>
+  <tr>
+   <!-- <td><%= tea_type.typeName %></td> -->
+  <!--  <td><%= tea_type.image %></td> -->
+    <td><%= tea_type.repTea %></td>
+ <!--  <td><%= tea_type.article %></td> -->
+    <td><%= link_to 'Show', tea_type %></td>
+   <!-- <td><%= link_to 'Edit', edit_tea_type_path(tea_type) %></td> -->
+    <!--<td><%= link_to 'Destroy', tea_type, confirm: 'Are you sure?', method: :delete %></td> -->
+  </tr>
+<% end %>
+</table>
+
+<br />
+</div>
+    
+    <div id="like"></div>
+  </div>
+</div>
+</body>
+</html>

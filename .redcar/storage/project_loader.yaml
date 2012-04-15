@@ -1,0 +1,11 @@
+--- 
+open_files: 
+  - db/schema.rb
+  - app/views/teas/index.html.erb
+  - Gemfile
+  - Gemfile.lock
+  - app/assets/stylesheets/tea_types.css.scss
+  - app/assets/stylesheets/teas.css.scss
+  - app/assets/stylesheets/application.css
+  - app/assets/stylesheets/comments.css.scss
+  - app/assets/stylesheets/scaffolds.css.scss
