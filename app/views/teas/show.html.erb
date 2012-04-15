@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @tea.name %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= @tea.region %>
+</p>
+
+<p>
+  <b>Likes:</b>
+  <%= @tea.likes %>
+</p>
+
+<p>
+  <b>Teatype:</b>
+  <%= @tea.teaType %>
+</p>
+
+
+<%= link_to 'Edit', edit_tea_path(@tea) %> |
+<%= link_to 'Back', teas_path %>

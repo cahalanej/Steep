@@ -1,0 +1,27 @@
+<h1>Listing tea_types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Reptea</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tea_types.each do |tea_type| %>
+  <tr>
+    <td><%= tea_type.name %></td>
+    <td><%= tea_type.image %></td>
+    <td><%= tea_type.repTea %></td>
+    <td><%= link_to 'Show', tea_type %></td>
+    <td><%= link_to 'Edit', edit_tea_type_path(tea_type) %></td>
+    <td><%= link_to 'Destroy', tea_type, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tea type', new_tea_type_path %>

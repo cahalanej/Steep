@@ -1,0 +1,33 @@
+<%= form_for(@tea) do |f| %>
+  <% if @tea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tea.errors.count, "error") %> prohibited this tea from being saved:</h2>
+
+      <ul>
+      <% @tea.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :region %><br />
+    <%= f.text_field :region %>
+  </div>
+  <div class="field">
+    <%= f.label :likes %><br />
+    <%= f.number_field :likes %>
+  </div>
+  <div class="field">
+    <%= f.label :teaType %><br />
+    <%= f.text_field :teaType %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

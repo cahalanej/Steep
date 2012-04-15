@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @tea_type.name %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= @tea_type.image %>
+</p>
+
+<p>
+  <b>Reptea:</b>
+  <%= @tea_type.repTea %>
+</p>
+
+
+<%= link_to 'Edit', edit_tea_type_path(@tea_type) %> |
+<%= link_to 'Back', tea_types_path %>

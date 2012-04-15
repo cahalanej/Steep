@@ -1,0 +1,2 @@
+module TeaTypesHelper
+end
