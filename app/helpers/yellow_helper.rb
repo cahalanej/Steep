@@ -1,0 +1,2 @@
+module YellowHelper
+end

@@ -1,4 +1,24 @@
 Steep::Application.routes.draw do
+  get "black/index"
+
+  get "black/show"
+
+  get "white/index"
+
+  get "white/show"
+
+  get "yellow/index"
+
+  get "yellow/show"
+
+  get "green/index"
+
+  get "green/show"
+
+  get "oolong/index"
+
+  get "oolong/show"
+
   resources :comments
 
   resources :users

@@ -1,0 +1,2 @@
+module OolongHelper
+end
