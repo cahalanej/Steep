@@ -1,8 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Steep - An App for All Things Tea</title>
+
+<style type="text/css">
+
+
+body {
+    font-family: PTSansRegular;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    line-height: 1;
+}
+
+body {
+	background-attachment: scroll;
+	background-color: #FC9;
+	background-image: url(<%= asset_path 'bg1920x1080.png' %>);
+	background-repeat: no-repeat;
+	background-position: fixed;
+}
+
+.header {
+	width: 1920px;
+	height: 360px;
+	/*margin: 0 auto auto 0;*/
+}
+
+.form {
+  position:absolute;
+	z-index:1;
+	left: 327px;
+	top: 30px;
+  text-align: center;
+  
+}
+
+#login { 
+	/*<background: url(<%= asset_path 'logintab.png' %>) no-repeat scroll 0 0;*/
+    /*margin: 0px 1000px 200px 0px;*/
+	/*width: 15%;*/
+    /*height: 350px;*/
+}
+
+#signup {
+	/*background: url(<%= asset_path 'signuptab.png' %>) no-repeat scroll 0 0;*/
+	/*width: 15%;*/
+    /*height: 350px;*/
+}
+
+.container {
+    width: 1920px;
+	height: auto;
+} 
+
+#credits {
+	background: url(<%= asset_path 'credits.png' %>) no-repeat scroll 0 0;
+}	
+#login {
+	position:absolute;
+	width:278px;
+	height:217px;
+	z-index:1;
+	left: 1274px;
+	top: -6px;
+}
+#signup {
+	position:absolute;
+	width:216px;
+	height:244px;
+	z-index:2;
+	left: 1415px;
+	top: -14px;
+}
+#main {
+	position:absolute;
+	width:1882px;
+	height:425px;
+	z-index:3;
+	left: 16px;
+	top: 366px;
+}
+#credits {
+	position:absolute;
+	width:252px;
+	height:185px;
+	z-index:2;
+	left: -41px;
+	top: 256px;
+}
+
+#error_explanation {
+  position: absolute;
+  top: 900px;
+  left: 227px;
+
+  color:#f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
+</style>
+</head>
+
 <%= form_for(@user) do |f| %>
+  
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
+      <div class="alert alert-error">
+      The form contains <%= pluralize(@user.errors.count, "error") %>.
+    </div>
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,31 +129,50 @@
     </div>
   <% end %>
 
+  <body>
+  <div class="header">
+
+    
+
+  <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), users_path%></div> 
+    <!--end login-->
+        
+  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div> <!--end signup-->
+
+</div>
+  <div class="container">
+  </div>
+  <div class="form">
+  <div id="title">
+  <h1> Sign Up </h1>
+</div>
+<form class="well">
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder =>"name" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :placeholder =>"email" %>
   </div>
   <div class="field">
-    <%= f.label :image %><br />
-    <%= f.text_field :image %>
+    <%= f.text_field :password, :placeholder =>"password" %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_field :password_confirmation, :placeholder =>"confirm your password" %>
   </div>
   <div class="field">
-    <%= f.label :tea %><br />
-    <%= f.text_field :tea %>
+    <%= f.text_area :description, :placeholder =>"tell us a little bit about yourself","cols" => 20, "rows" => 30 %>
   </div>
-  <div class="field">
-    <%= f.label :teaType %><br />
-    <%= f.text_field :teaType %>
-  </div>
+  
+  </form>
+
+ 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn-large btn-inverse' %>
   </div>
+</div>
+  <div id="main">
+  <div id="credits"></div>
+</div>
+
+</body>
 <% end %>

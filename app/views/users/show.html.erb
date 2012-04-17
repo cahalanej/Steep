@@ -1,34 +1,175 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Steep - An App for All Things Tea</title>
 
-<p>
-  <b>Name:</b>
+<style type="text/css">
+
+
+body {
+    font-family: PTSansRegular;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    line-height: 1;
+}
+
+body {
+	background-attachment: scroll;
+	background-color: #FC9;
+	background-image: url(<%= asset_path 'bg1920x1080.png' %>);
+	background-repeat: no-repeat;
+	background-position: fixed;
+}
+
+.header {
+	width: 1920px;
+	height: 360px;
+	/*margin: 0 auto auto 0;*/
+}
+
+
+#login { 
+	background: url(<%= asset_path 'logintab.png' %>) no-repeat scroll 0 0;
+    /*margin: 0px 1000px 200px 0px;*/
+	/*width: 15%;*/
+    /*height: 350px;*/
+}
+
+#signup {
+	background: url(<%= asset_path 'signuptab.png' %>) no-repeat scroll 0 0;
+	/*width: 15%;*/
+    /*height: 350px;*/
+}
+
+.container {
+    width: 1920px;
+	height: auto;
+} 
+
+#username {
+	background: url(<%= asset_path 'username.png' %>) no-repeat scroll 0 0;
+}
+
+#profilepic {
+	background: url(<%= asset_path 'profilepic.png' %>) no-repeat scroll 0 0;
+}
+
+#teasliked {
+	background: url(<%= asset_path 'teasliked.png' %>) no-repeat scroll 0 0;
+}
+
+#typesliked {
+	background: url(<%= asset_path 'typesliked.png' %>) no-repeat scroll 0 0;
+}
+
+#credits {
+	background: url(<%= asset_path 'credits.png' %>) no-repeat scroll 0 0;
+}	
+#login {
+	position:absolute;
+	width:278px;
+	height:217px;
+	z-index:1;
+	left: 1274px;
+	top: -6px;
+}
+#signup {
+	position:absolute;
+	width:216px;
+	height:244px;
+	z-index:2;
+	left: 1415px;
+	top: -14px;
+}
+#main {
+	position:absolute;
+	width:1882px;
+	height:425px;
+	z-index:3;
+	left: 16px;
+	top: 366px;
+}
+#credits {
+	position:absolute;
+	width:252px;
+	height:185px;
+	z-index:2;
+	left: -41px;
+	top: 256px;
+}
+#username {
+	position:absolute;
+	width:400px;
+	height:127px;
+	z-index:4;
+	left: 221px;
+	top: 31px;
+}
+#profilepic {
+	position:absolute;
+	width:411px;
+	height:417px;
+	z-index:5;
+	left: 211px;
+	top: 166px;
+}
+#teasliked {
+	position:absolute;
+	width:511px;
+	height:371px;
+	z-index:6;
+	left: 666px;
+	top: 27px;
+}
+#typesliked {
+	position:absolute;
+	width:602px;
+	height:355px;
+	z-index:7;
+	left: 664px;
+	top: 422px;
+}
+</style>
+</head>
+
+<body>
+<div id="teasliked"></div>
+<div id="typesliked"></div>
+<!--<img src="images/background.png" width="4800" height="3600" />-->
+<div class="header">
+
+    
+
+  <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), users_path%></div> 
+    <!--end login-->
+        
+  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div> <!--end signup-->
+
+</div><!--end class header"-->
+<div class="container">
+
+</div><!--end class container-->
+<%provide(:title, @user.name)%>
+<div id="username">
   <%= @user.name %>
-</p>
+</div>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+<div id="profilepic">
+  <%= gravatar_for @user %>
+ 
+</div>
 
-<p>
-  <b>Image:</b>
-  <%= @user.image %>
-</p>
+<div id="main">
+  <div id="credits"></div>
+</div>
+</body>
+</html>
 
-<p>
-  <b>Description:</b>
-  <%= @user.description %>
-</p>
-
-<p>
-  <b>Tea:</b>
-  <%= @user.tea %>
-</p>
-
-<p>
-  <b>Teatype:</b>
-  <%= @user.teaType %>
-</p>
+<p id="notice"><%= notice %></p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

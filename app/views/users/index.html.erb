@@ -3,23 +3,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Steep - An App for All Things Tea</title>
-<link rel="stylesheet" type="text/css" href="/assets/users.css.erb" />
+<link rel="stylesheet" type="text/css" href="profilestyle.css" />
 <style type="text/css">
 #login {
 	position:absolute;
 	width:278px;
-	height:329px;
+	height:217px;
 	z-index:1;
 	left: 1274px;
-	top: 16px;
+	top: -6px;
 }
 #signup {
 	position:absolute;
 	width:216px;
-	height:323px;
+	height:244px;
 	z-index:2;
 	left: 1415px;
-	top: 8px;
+	top: -14px;
 }
 #main {
 	position:absolute;
@@ -29,54 +29,6 @@
 	left: 16px;
 	top: 366px;
 }
-#teas {
-	position:absolute;
-	width:1676px;
-	height:380px;
-	z-index:1;
-	left: 120px;
-	top: 0px;
-}
-#black {
-	position:absolute;
-	width:280px;
-	height:337px;
-	z-index:1;
-	left: 214px;
-	top: 0px;
-}
-#green {
-	position:absolute;
-	width:280px;
-	height:341px;
-	z-index:2;
-	left: 464px;
-	top: 0px;
-}
-#white {
-	position:absolute;
-	width:280px;
-	height:338px;
-	z-index:3;
-	left: 717px;
-	top: 0px;
-}
-#yellow {
-	position:absolute;
-	width:280px;
-	height:332px;
-	z-index:4;
-	left: 969px;
-	top: 0px;
-}
-#oolong {
-	position:absolute;
-	width:280px;
-	height:335px;
-	z-index:5;
-	left: 1222px;
-	top: 0px;
-}
 #credits {
 	position:absolute;
 	width:252px;
@@ -85,45 +37,65 @@
 	left: -41px;
 	top: 256px;
 }
+#username {
+	position:absolute;
+	width:400px;
+	height:127px;
+	z-index:4;
+	left: 221px;
+	top: 31px;
+}
+#profilepic {
+	position:absolute;
+	width:411px;
+	height:417px;
+	z-index:5;
+	left: 211px;
+	top: 166px;
+}
+#teasliked {
+	position:absolute;
+	width:511px;
+	height:371px;
+	z-index:6;
+	left: 666px;
+	top: 27px;
+}
+#typesliked {
+	position:absolute;
+	width:602px;
+	height:355px;
+	z-index:7;
+	left: 664px;
+	top: 422px;
+}
 </style>
 </head>
 
 <body>
+<div id="teasliked"></div>
+<div id="typesliked"></div>
 <!--<img src="images/background.png" width="4800" height="3600" />-->
 <div class="header">
 
-  <div id="title">
-  </div> <!--end title-->
     
 
-    <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), users_path%></div> 
+  <div id="login"></div> 
     <!--end login-->
         
-  	<div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div> 
-    <!--end signup-->
+  <div id="signup"></div> <!--end signup-->
 
 </div><!--end class header"-->
 <div class="container">
 
 </div><!--end class container-->
+<div id="username"></div>
+<div id="profilepic"></div>
 <div id="main">
-  <div id="teas">
-    <div id="black"><a href="pages/black.html">
-				<img src="images/black.png" alt="Black Teas"/></a></div>
-    <div id="green"><a href="pages/green.html">
-				<img src="images/green.png" alt="Green Teas"/></a></div>
-    <div id="white"><a href="pages/white.html">
-				<img src="images/white.png" alt="White Teas"/></a></div>
-    <div id="yellow"><a href="pages/yellow.html">
-				<img src="images/yellow.png" alt="Yellow Teas"/></a></div>
-    <div id="oolong"><a href="pages/oolong.html">
-				<img src="images/oolong.png" alt="Oolong Teas"/></a></div>
-  </div>
   <div id="credits"></div>
 </div>
 </body>
 </html>
-
 
 
 <h1>Listing users</h1>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120415201834) do
+ActiveRecord::Schema.define(:version => 20120416151153) do
 
   create_table "comments", :force => true do |t|
     t.string   "title"
@@ -51,10 +51,12 @@ ActiveRecord::Schema.define(:version => 20120415201834) do
     t.text     "description"
     t.integer  "tea_id"
     t.integer  "teaType_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["teaType_id"], :name => "index_users_on_teaType_id"
   add_index "users", ["tea_id"], :name => "index_users_on_tea_id"
 

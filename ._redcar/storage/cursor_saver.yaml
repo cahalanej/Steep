@@ -1,4 +1,48 @@
 --- 
-cursor_positions: []
-
+cursor_positions: 
+  - :path: Gemfile
+    :cursor_offset: 790
+    :timestamp: 2012-04-16 10:58:24.042000 -04:00
+  - :path: db/migrate/20120416150737_add_index_to_users_email.rb
+    :cursor_offset: 119
+    :timestamp: 2012-04-16 11:07:59.910000 -04:00
+  - :path: db/schema.rb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 11:08:40.531000 -04:00
+  - :path: app/views/users/index.html.erb
+    :cursor_offset: 612
+    :timestamp: 2012-04-16 12:27:09.261000 -04:00
+  - :path: app/assets/stylesheets/users.css.erb
+    :cursor_offset: 38
+    :timestamp: 2012-04-16 12:32:29.302000 -04:00
+  - :path: app/views/teas/_form.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.192000 -04:00
+  - :path: app/views/users/new.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.222000 -04:00
+  - :path: app/views/home/index.html.erb
+    :cursor_offset: 68
+    :timestamp: 2012-04-16 10:50:21.150000 -04:00
+  - :path: app/assets/stylesheets/users.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.007000 -04:00
+  - :path: app/helpers/users_helper.rb
+    :cursor_offset: 322
+    :timestamp: 2012-04-16 12:33:28.469000 -04:00
+  - :path: config/routes.rb
+    :cursor_offset: 512
+    :timestamp: 2012-04-16 11:20:00.788000 -04:00
+  - :path: app/views/users/_form.html.erb
+    :cursor_offset: 998
+    :timestamp: 2012-04-16 20:24:12.454000 -04:00
+  - :path: app/views/teas/new.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.203000 -04:00
+  - :path: app/views/teas/index.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.199000 -04:00
+  - :path: app/views/teas/show.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.207000 -04:00
 files_to_retain: 0
