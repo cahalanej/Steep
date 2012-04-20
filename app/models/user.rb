@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
  attr_accessible :name, :email, :password, :password_confirmation, :tea, :teaType, :description, :image
-accepts_nested_attributes_for :comments  
+
 has_secure_password
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -14,7 +14,9 @@ has_secure_password
   validates :password_confirmation, presence: true
   belongs_to :tea
   belongs_to :teaType
+  has_many :comments
   
+
   private
 
     def create_remember_token

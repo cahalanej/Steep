@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
+  
+ #before_filter :authenticate, :except => [:index, :show]
   def index
     @users = User.all
 
@@ -14,10 +16,12 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
+    @comment = @user.comments.build 
+    @comments = @user.comments
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
+      
     end
   end
 
@@ -93,3 +97,9 @@ private
       redirect_to(root_path) unless current_user?(@user)
     end
 
+#def authenticate
+#authenticate_or_request_with_http_basic do |name, password|
+#name == "admin" && password == "secret"
+#end
+
+#end

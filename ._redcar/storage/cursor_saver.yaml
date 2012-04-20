@@ -17,18 +17,12 @@ cursor_positions:
     :timestamp: 2012-04-16 12:32:29.302000 -04:00
     :selection_offset: 962
     :block_selection_mode: false
-  - :path: app/views/users/index.html.erb
-    :cursor_offset: 1918
-    :timestamp: 2012-04-16 12:27:09.261000 -04:00
   - :path: app/assets/stylesheets/home.css.erb
     :cursor_offset: 545
     :timestamp: 2012-04-16 21:17:06.848000 -04:00
   - :path: app/views/users/show.html.erb
     :cursor_offset: 3435
     :timestamp: 2012-04-19 18:12:38.588000 -04:00
-  - :path: app/models/user.rb
-    :cursor_offset: 210
-    :timestamp: 2012-04-19 17:43:11.941000 -04:00
   - :path: app/views/sessions/new.html
     :cursor_offset: 453
     :timestamp: 2012-04-16 21:37:16.494000 -04:00
@@ -93,9 +87,6 @@ cursor_positions:
   - :path: config/initializers/omniauth.rb
     :cursor_offset: 163
     :timestamp: 2012-04-19 18:28:56.611000 -04:00
-  - :path: Gemfile
-    :cursor_offset: 297
-    :timestamp: 2012-04-19 18:31:10.483000 -04:00
   - :path: app/views/users/new.html.erb
     :cursor_offset: 116
     :timestamp: 2012-04-19 18:26:13.853000 -04:00
@@ -116,9 +107,6 @@ cursor_positions:
     :timestamp: 2012-04-19 17:36:16.273000 -04:00
     :selection_offset: 1533
     :block_selection_mode: false
-  - :path: app/models/tea_type.rb
-    :cursor_offset: 39
-    :timestamp: 2012-04-19 20:22:01.716000 -04:00
   - :path: app/controllers/application_controller.rb
     :cursor_offset: 101
     :timestamp: 2012-04-19 17:47:29.365000 -04:00
@@ -157,4 +145,24 @@ cursor_positions:
   - :path: app/views/users/edit.html.erb
     :cursor_offset: 0
     :timestamp: 2012-04-16 10:50:21.214000 -04:00
+  - :path: app/views/users/index.html.erb
+    :cursor_offset: 2310
+    :timestamp: 2012-04-16 12:27:09.261000 -04:00
+    :selection_offset: 2319
+    :block_selection_mode: false
+  - :path: app/assets/javascripts/application.js
+    :cursor_offset: 579
+    :timestamp: 2012-04-20 14:12:35.276000 -04:00
+  - :path: app/models/tea_type.rb
+    :cursor_offset: 38
+    :timestamp: 2012-04-19 20:22:01.716000 -04:00
+  - :path: app/models/user.rb
+    :cursor_offset: 136
+    :timestamp: 2012-04-20 14:15:51.347000 -04:00
+  - :path: app/views/users/_user.html.erb
+    :cursor_offset: 133
+    :timestamp: 2012-04-20 15:06:35.715000 -04:00
+  - :path: Gemfile
+    :cursor_offset: 556
+    :timestamp: 2012-04-20 15:20:18.352000 -04:00
 files_to_retain: 0

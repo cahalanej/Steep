@@ -30,12 +30,14 @@ Steep::Application.routes.draw do
   resources :tea_types
   
   resources :sessions, only: [:new, :create, :destroy]
+  
+  resources :users, :has_many => :comments
 
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   
-   match "/auth/:provider/callback" => "sessions#new"  
+  match "/auth/:provider/callback" => "sessions#new"  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
