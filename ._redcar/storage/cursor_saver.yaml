@@ -1,48 +1,160 @@
 --- 
 cursor_positions: 
-  - :path: Gemfile
-    :cursor_offset: 790
-    :timestamp: 2012-04-16 10:58:24.042000 -04:00
-  - :path: db/migrate/20120416150737_add_index_to_users_email.rb
-    :cursor_offset: 119
-    :timestamp: 2012-04-16 11:07:59.910000 -04:00
-  - :path: db/schema.rb
-    :cursor_offset: 0
-    :timestamp: 2012-04-16 11:08:40.531000 -04:00
-  - :path: app/views/users/index.html.erb
-    :cursor_offset: 612
-    :timestamp: 2012-04-16 12:27:09.261000 -04:00
-  - :path: app/assets/stylesheets/users.css.erb
-    :cursor_offset: 38
-    :timestamp: 2012-04-16 12:32:29.302000 -04:00
-  - :path: app/views/teas/_form.html.erb
-    :cursor_offset: 0
-    :timestamp: 2012-04-16 10:50:21.192000 -04:00
-  - :path: app/views/users/new.html.erb
-    :cursor_offset: 0
-    :timestamp: 2012-04-16 10:50:21.222000 -04:00
-  - :path: app/views/home/index.html.erb
-    :cursor_offset: 68
-    :timestamp: 2012-04-16 10:50:21.150000 -04:00
   - :path: app/assets/stylesheets/users.css.scss
     :cursor_offset: 0
     :timestamp: 2012-04-16 10:50:21.007000 -04:00
-  - :path: app/helpers/users_helper.rb
-    :cursor_offset: 322
-    :timestamp: 2012-04-16 12:33:28.469000 -04:00
-  - :path: config/routes.rb
-    :cursor_offset: 512
-    :timestamp: 2012-04-16 11:20:00.788000 -04:00
-  - :path: app/views/users/_form.html.erb
-    :cursor_offset: 998
-    :timestamp: 2012-04-16 20:24:12.454000 -04:00
   - :path: app/views/teas/new.html.erb
     :cursor_offset: 0
     :timestamp: 2012-04-16 10:50:21.203000 -04:00
-  - :path: app/views/teas/index.html.erb
+  - :path: app/helpers/users_helper.rb
+    :cursor_offset: 376
+    :timestamp: 2012-04-16 20:54:11.552000 -04:00
+  - :path: app/views/layouts/application.html.erb
+    :cursor_offset: 201
+    :timestamp: 2012-04-16 20:51:11.011000 -04:00
+  - :path: app/assets/stylesheets/users.css.erb
+    :cursor_offset: 913
+    :timestamp: 2012-04-16 12:32:29.302000 -04:00
+    :selection_offset: 962
+    :block_selection_mode: false
+  - :path: app/views/users/index.html.erb
+    :cursor_offset: 1918
+    :timestamp: 2012-04-16 12:27:09.261000 -04:00
+  - :path: app/assets/stylesheets/home.css.erb
+    :cursor_offset: 545
+    :timestamp: 2012-04-16 21:17:06.848000 -04:00
+  - :path: app/views/users/show.html.erb
+    :cursor_offset: 3435
+    :timestamp: 2012-04-19 18:12:38.588000 -04:00
+  - :path: app/models/user.rb
+    :cursor_offset: 210
+    :timestamp: 2012-04-19 17:43:11.941000 -04:00
+  - :path: app/views/sessions/new.html
+    :cursor_offset: 453
+    :timestamp: 2012-04-16 21:37:16.494000 -04:00
+  - :path: db/migrate/20120415195758_create_tea_types.rb
     :cursor_offset: 0
-    :timestamp: 2012-04-16 10:50:21.199000 -04:00
+    :timestamp: 2012-04-16 10:50:21.305000 -04:00
+  - :path: db/migrate/20120415201135_create_teas.rb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.308000 -04:00
+  - :path: db/migrate/20120415201441_create_users.rb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.347000 -04:00
+  - :path: db/migrate/20120415201834_create_comments.rb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.351000 -04:00
+  - :path: db/migrate/20120416150737_add_index_to_users_email.rb
+    :cursor_offset: 119
+    :timestamp: 2012-04-16 11:07:59.910000 -04:00
+  - :path: db/migrate/20120416151153_add_password_digest_to_users.rb
+    :cursor_offset: 130
+    :timestamp: 2012-04-16 11:11:53.036000 -04:00
+  - :path: db/migrate/20120417014526_add_remember_token_to_users.rb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 22:01:27.285000 -04:00
+  - :path: app/controllers/sessions_controller.rb
+    :cursor_offset: 400
+    :timestamp: 2012-04-19 17:57:28.589000 -04:00
+  - :path: app/controllers/users_controller.rb
+    :cursor_offset: 1717
+    :timestamp: 2012-04-19 18:11:24.842000 -04:00
+  - :path: app/views/home/index.html.erb
+    :cursor_offset: 2597
+    :timestamp: 2012-04-19 17:57:31.689000 -04:00
+  - :path: app/views/users/_form.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 23:02:53.067000 -04:00
+  - :path: app/views/comments/_form.html.erb
+    :cursor_offset: 780
+    :timestamp: 2012-04-16 10:50:21.124000 -04:00
   - :path: app/views/teas/show.html.erb
+    :cursor_offset: 201
+    :timestamp: 2012-04-19 19:57:06.214000 -04:00
+  - :path: app/views/teas/index.html.erb
+    :cursor_offset: 170
+    :timestamp: 2012-04-16 10:50:21.199000 -04:00
+    :selection_offset: 189
+    :block_selection_mode: false
+  - :path: app/controllers/teas_controller.rb
+    :cursor_offset: 99
+    :timestamp: 2012-04-16 10:50:21.054000 -04:00
+  - :path: app/views/teas/_form.html.erb
+    :cursor_offset: 754
+    :timestamp: 2012-04-16 20:47:46.196000 -04:00
+    :selection_offset: 748
+    :block_selection_mode: false
+  - :path: db/seeds.rb
+    :cursor_offset: 3179
+    :timestamp: 2012-04-19 20:01:54.068000 -04:00
+  - :path: config/routes.rb
+    :cursor_offset: 609
+    :timestamp: 2012-04-19 18:30:14.113000 -04:00
+  - :path: config/initializers/omniauth.rb
+    :cursor_offset: 163
+    :timestamp: 2012-04-19 18:28:56.611000 -04:00
+  - :path: Gemfile
+    :cursor_offset: 297
+    :timestamp: 2012-04-19 18:31:10.483000 -04:00
+  - :path: app/views/users/new.html.erb
+    :cursor_offset: 116
+    :timestamp: 2012-04-19 18:26:13.853000 -04:00
+  - :path: app/helpers/application_helper.rb
     :cursor_offset: 0
-    :timestamp: 2012-04-16 10:50:21.207000 -04:00
+    :timestamp: 2012-04-16 10:50:21.069000 -04:00
+  - :path: app/helpers/home_helper.rb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.082000 -04:00
+  - :path: app/helpers/oolong_helper.rb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.085000 -04:00
+  - :path: app/views/oolong/index.html.erb
+    :cursor_offset: 1038
+    :timestamp: 2012-04-19 20:28:10.415000 -04:00
+  - :path: db/schema.rb
+    :cursor_offset: 1523
+    :timestamp: 2012-04-19 17:36:16.273000 -04:00
+    :selection_offset: 1533
+    :block_selection_mode: false
+  - :path: app/models/tea_type.rb
+    :cursor_offset: 39
+    :timestamp: 2012-04-19 20:22:01.716000 -04:00
+  - :path: app/controllers/application_controller.rb
+    :cursor_offset: 101
+    :timestamp: 2012-04-19 17:47:29.365000 -04:00
+  - :path: app/controllers/tea_types_controller.rb
+    :cursor_offset: 508
+    :timestamp: 2012-04-19 20:29:09.981000 -04:00
+  - :path: app/controllers/oolong_controller.rb
+    :cursor_offset: 2080
+    :timestamp: 2012-04-19 20:18:10.917000 -04:00
+    :selection_offset: 48
+    :block_selection_mode: false
+  - :path: app/helpers/sessions_helper.rb
+    :cursor_offset: 152
+    :timestamp: 2012-04-19 18:00:36.262000 -04:00
+  - :path: app/controllers/white_controller.rb
+    :cursor_offset: 146
+    :timestamp: 2012-04-19 20:50:59.731000 -04:00
+  - :path: app/controllers/yellow_controller.rb
+    :cursor_offset: 148
+    :timestamp: 2012-04-19 20:51:09.357000 -04:00
+  - :path: app/controllers/green_controller.rb
+    :cursor_offset: 270
+    :timestamp: 2012-04-19 20:45:13.506000 -04:00
+  - :path: app/controllers/black_controller.rb
+    :cursor_offset: 146
+    :timestamp: 2012-04-19 20:51:20.272000 -04:00
+  - :path: app/views/green/index.html.erb
+    :cursor_offset: 1917
+    :timestamp: 2012-04-19 21:06:52.393000 -04:00
+  - :path: app/views/black/index.html.erb
+    :cursor_offset: 1917
+    :timestamp: 2012-04-19 21:07:08.745000 -04:00
+  - :path: app/views/white/index.html.erb
+    :cursor_offset: 1917
+    :timestamp: 2012-04-19 21:07:25.598000 -04:00
+  - :path: app/views/users/edit.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-16 10:50:21.214000 -04:00
 files_to_retain: 0

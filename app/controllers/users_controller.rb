@@ -44,11 +44,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { render action: "show", notice: 'User was successfully created.' }
+        sign_in @user
+       format.html { render action: "show", notice: 'User was successfully created.' }
         #format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render 'new'
       end
     end
   end
@@ -81,3 +81,15 @@ class UsersController < ApplicationController
     end
   end
 end
+
+private
+
+    def signed_in_user
+      redirect_to signin_path, notice: "Please sign in." unless signed_in?
+    end
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
+

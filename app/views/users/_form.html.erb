@@ -34,10 +34,21 @@ body {
 .form {
   position:absolute;
 	z-index:1;
-	left: 327px;
+	/*left: 327px;*/
+  left: 150px;
 	top: 30px;
   text-align: center;
   
+}
+
+#burlap {
+  position:absolute;  
+  width: 525px;
+  height: 900px;
+	z-index: 0;
+  left: 525px;
+	top: 30px;
+     background-image: url(<%= asset_path 'blankburlap.png' %>);
 }
 
 #login { 
@@ -96,8 +107,8 @@ body {
 
 #error_explanation {
   position: absolute;
-  top: 900px;
-  left: 227px;
+  top: 350px;
+  left: 1100px;
 
   color:#f00;
   ul {
@@ -142,10 +153,11 @@ body {
 </div>
   <div class="container">
   </div>
+  <div id="burlap">
   <div class="form">
-  <div id="title">
-  <h1> Sign Up </h1>
-</div>
+    <div id="title">
+   <h1> Sign Up </h1>
+    </div>
 <form class="well">
   <div class="field">
     <%= f.text_field :name, :placeholder =>"name" %>
@@ -169,6 +181,7 @@ body {
   <div class="actions">
     <%= f.submit class: 'btn-large btn-inverse' %>
   </div>
+</div>
 </div>
   <div id="main">
   <div id="credits"></div>

@@ -1,6 +1,10 @@
 class TeaTypesController < ApplicationController
   # GET /tea_types
   # GET /tea_types.json
+  def tea
+teas.where(teaType_id: 2)
+end
+  
   def index
     @tea_types = TeaType.all
 

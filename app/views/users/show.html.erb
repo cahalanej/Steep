@@ -109,6 +109,14 @@ body {
 	left: 221px;
 	top: 31px;
 }
+#actualname {
+  position:absolute;
+	width:400px;
+	height:127px;
+	z-index:5;
+	left: 170px;
+	top: 40px;
+}
 #profilepic {
 	position:absolute;
 	width:411px;
@@ -116,6 +124,23 @@ body {
 	z-index:5;
 	left: 211px;
 	top: 166px;
+}
+#actualpic {
+	position:absolute;
+	width:411px;
+	height:417px;
+	z-index:6;
+	left: 40px;
+	top: 40px;
+}
+#description {
+  background: url(<%= asset_path 'description.png' %>) no-repeat scroll 0 0;
+  position:absolute;
+	width:411px;
+	height:417px;
+	z-index:6;
+	left: 211px;
+	top: 575px;
 }
 #teasliked {
 	position:absolute;
@@ -130,6 +155,15 @@ body {
 	width:602px;
 	height:355px;
 	z-index:7;
+	left: 664px;
+	top: 222px;
+}
+#comments{
+  background: url(<%= asset_path 'comments.png' %>) no-repeat scroll 0 0;
+  position:absolute;
+	width:602px;
+	height:355px;
+	z-index:8;
 	left: 664px;
 	top: 422px;
 }
@@ -155,12 +189,23 @@ body {
 </div><!--end class container-->
 <%provide(:title, @user.name)%>
 <div id="username">
-  <%= @user.name %>
+  <div id="actualname">
+    <%= @user.name %>
+  </div>
 </div>
 
 <div id="profilepic">
-  <%= gravatar_for @user %>
- 
+  <div id = "actualpic">
+    <%= gravatar_for @user %>
+ </div>
+</div>
+
+<div id="description">
+  <%= @user.description %>
+</div>
+
+<div id="comments">
+  <%= Comments.title%>
 </div>
 
 <div id="main">
@@ -174,3 +219,5 @@ body {
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<%= link_to "Settings", edit_user_path(current_user) %>
+<%= link_to "Sign out", signout_path, method: "delete" %>

@@ -1,2 +1,123 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Steep - An App for All Things Tea</title>
+<link rel="stylesheet" type="text/css" href="/assets/home.css.erb" />
+<style type="text/css">
+#login {
+	position:absolute;
+	width:278px;
+	height:329px;
+	z-index:1;
+	left: 1274px;
+	top: 16px;
+}
+#signup {
+	position:absolute;
+	width:216px;
+	height:323px;
+	z-index:2;
+	left: 1415px;
+	top: 8px;
+}
+#main {
+	position:absolute;
+	width:1882px;
+	height:425px;
+	z-index:3;
+	left: 16px;
+	top: 366px;
+}
+#teas {
+	position:absolute;
+	width:1676px;
+	height:380px;
+	z-index:1;
+	left: 120px;
+	top: 0px;
+}
+#black {
+	position:absolute;
+	width:280px;
+	height:380px;
+	z-index:1;
+	left: 214px;
+	top: 0px;
+}
+#green {
+	position:absolute;
+	width:280px;
+	height:380px;
+	z-index:2;
+	left: 464px;
+	top: 0px;
+}
+#white {
+	position:absolute;
+	width:280px;
+	height:380px;
+	z-index:3;
+	left: 717px;
+	top: 0px;
+}
+#yellow {
+	position:absolute;
+	width:280px;
+	height:380px;
+	z-index:4;
+	left: 969px;
+	top: 0px;
+}
+#oolong {
+	position:absolute;
+	width:280px;
+	height:280px;
+	z-index:5;
+	left: 1222px;
+	top: 0px;
+}
+#credits {
+	position:absolute;
+	width:252px;
+	height:185px;
+	z-index:2;
+	left: -41px;
+	top: 256px;
+}
+</style>
+</head>
+
+<body>
+<!--<img src="app/assets/images/background.png" width="4800" height="3600" />-->
+<div class="header">
+
+  <div id="titleh">
+  </div> <!--end title-->
+    
+
+  <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), signin_path%></div> 
+
+    <!--end login-->
+        
+  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div>  <!--end signup-->
+
+</div><!--end class header"-->
+<div class="container">
+
+</div><!--end class container-->
+<div id="main">
+  <div id="teas">
+    <div id="black"><%= link_to image_tag("/assets/black.png", :border=>0), black_index_path%></div>
+    <div id="green"><%= link_to image_tag("/assets/green.png", :border=>0), green_index_path%></div>
+    <div id="white"><%= link_to image_tag("/assets/white.png", :border=>0), white_index_path%></div>
+    <div id="yellow"><%= link_to image_tag("/assets/yellow.png", :border=>0), yellow_index_path%></div>
+    <div id="oolong"><%= link_to image_tag("/assets/oolong.png", :border=>0), oolong_index_path%>
+				<!--<img src="/assets/oolong.png" alt="Oolong Teas"/></a>--></div> 
+  </div>
+  <div id="credits"></div>
+</div>
+
+
+</body>
+</html>
