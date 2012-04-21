@@ -1,4 +1,5 @@
 Steep::Application.routes.draw do
+ 
   resources :posts
 
   get "home/index"
@@ -26,8 +27,10 @@ Steep::Application.routes.draw do
   resources :comments
 
   resources :users
-
-  resources :teas
+  
+  resources :teas do
+    resources :likes
+  end
 
   resources :tea_types
   

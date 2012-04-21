@@ -6,11 +6,11 @@ class TeasController < ApplicationController
       respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @teas }
+      
     end
         #@teas = Tea.search(params[:search])
   end
-  
-  end
+ 
   # GET /teas/1
   # GET /teas/1.json
   def show

@@ -4,7 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Region</th>
-    <th>Likes</th>
     <th>Teatype</th>
     <th></th>
     <th></th>
@@ -15,11 +14,12 @@
   <tr>
     <td><%= tea.name %></td>
     <td><%= tea.region %></td>
-    <td><%= tea.likes %></td>
-    <td><%= tea.teaType %></td>
+    <td><%= link_to tea.teaType.name, tea.teaType %></td>
     <td><%= link_to 'Show', tea %></td>
     <td><%= link_to 'Edit', edit_tea_path(tea) %></td>
     <td><%= link_to 'Destroy', tea, confirm: 'Are you sure?', method: :delete %></td>
+  	<td><%= tea.likes.count %></td>
+  	<td><%= button_to 'Like', tea_likes_path(tea), method: :post%></td>
   </tr>
 <% end %>
 </table>

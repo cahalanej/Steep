@@ -3,7 +3,6 @@ class CreateTeas < ActiveRecord::Migration
     create_table :teas do |t|
       t.string :name
       t.string :region
-      t.integer :likes
       t.belongs_to :teaType
 
       t.timestamps
@@ -11,7 +10,3 @@ class CreateTeas < ActiveRecord::Migration
     add_index :teas, :teaType_id
   end
 end
-
-  def up
-    remove_column(:teas, :likes )
-  end

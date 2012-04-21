@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120421164632) do
+ActiveRecord::Schema.define(:version => 20120421204631) do
 
   create_table "comments", :force => true do |t|
     t.string   "title"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(:version => 20120421164632) do
 
   add_index "comments", ["tea_id"], :name => "index_comments_on_tea_id"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "likes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "tea_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "likes", ["tea_id"], :name => "index_likes_on_tea_id"
+  add_index "likes", ["user_id"], :name => "index_likes_on_user_id"
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -46,7 +56,6 @@ ActiveRecord::Schema.define(:version => 20120421164632) do
   create_table "teas", :force => true do |t|
     t.string   "name"
     t.string   "region"
-    t.integer  "likes"
     t.integer  "teaType_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

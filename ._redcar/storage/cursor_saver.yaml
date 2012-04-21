@@ -223,4 +223,7 @@ cursor_positions:
   - :path: app/views/teas/_search_results.html
     :cursor_offset: 91
     :timestamp: 2012-04-21 15:49:25.135000 -04:00
+  - :path: app/models/tea.rb
+    :cursor_offset: 607
+    :timestamp: 2012-04-21 17:00:00.536000 -04:00
 files_to_retain: 0
