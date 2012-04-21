@@ -2,14 +2,15 @@ class TeasController < ApplicationController
   # GET /teas
   # GET /teas.json
   def index
-    @teas = Tea.all
-
-    respond_to do |format|
+     @teas = Tea.all
+      respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @teas }
     end
+        #@teas = Tea.search(params[:search])
   end
-
+  
+  end
   # GET /teas/1
   # GET /teas/1.json
   def show
@@ -80,4 +81,8 @@ class TeasController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def search
+  @teas = Tea.search params[:search]
+end
 end

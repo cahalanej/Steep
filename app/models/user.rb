@@ -15,6 +15,7 @@ has_secure_password
   belongs_to :tea
   belongs_to :teaType
   has_many :comments
+  has_many :posts
   
 
   private

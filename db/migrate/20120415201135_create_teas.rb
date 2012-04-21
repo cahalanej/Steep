@@ -11,3 +11,7 @@ class CreateTeas < ActiveRecord::Migration
     add_index :teas, :teaType_id
   end
 end
+
+  def up
+    remove_column(:teas, :likes )
+  end

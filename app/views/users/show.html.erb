@@ -206,39 +206,42 @@ body {
 </div>
 
 <div id="comments">
-<h2>Comments</h2>
-<div id = "comments">
+<h2>Wall</h2>
 
 
-
-<form>
-<%= form_for(@user, Comment.new) do |f| %>
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-      <% @comment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_for(@user.posts.build) do |f| %>
+  <%= f.hidden_field :user_id%>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :cmt %><br />
-    <%= f.text_area :cmt %>
+    <%= f.label :post %><br />
+    <%= f.text_area :post %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Post</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-</form>
+<% @user.posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td>By <%= link_to post.user.name, post.user%> at <%= post.created_at%></td>
+    <td><%= post.post %></td>
+   
+  </tr>
+<% end %>
+</table>
 
 
 </div>

@@ -1,0 +1,8 @@
+
+<% if @teas.empty? %>
+        <span>There were no results for your query</span><br/><br/>
+<% else %>
+<% for product in @products %>
+Result: <% tea.name %>
+<% end %>
+<% end %>
