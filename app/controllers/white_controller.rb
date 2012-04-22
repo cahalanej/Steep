@@ -3,8 +3,7 @@ class WhiteController < ApplicationController
   # GET /tea_types.json
   def index
     @tea_types = TeaType.where(:name => 'White')
-   
-
+ 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tea_types }
@@ -15,7 +14,7 @@ class WhiteController < ApplicationController
   # GET /tea_types/1.json
   def show
     @tea_type = TeaType.find(params[:id])
-    @teas =Tea.where(@tea_types)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @tea_type }

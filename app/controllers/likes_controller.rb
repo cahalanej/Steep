@@ -1,6 +1,8 @@
 class LikesController < ApplicationController
   # GET /likes
   # GET /likes.json
+  
+  
   def index
     @likes = Like.all
 

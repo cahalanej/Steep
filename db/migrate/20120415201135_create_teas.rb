@@ -3,6 +3,7 @@ class CreateTeas < ActiveRecord::Migration
     create_table :teas do |t|
       t.string :name
       t.string :region
+      t.string :image_id
       t.belongs_to :teaType
 
       t.timestamps

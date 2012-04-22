@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20120421204631) do
   create_table "teas", :force => true do |t|
     t.string   "name"
     t.string   "region"
+    t.string   "image_id"
     t.integer  "teaType_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

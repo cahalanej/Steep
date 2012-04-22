@@ -1,3 +1,21 @@
 --- 
-open_files: []
-
+open_files: 
+  - db/migrate/20120415201135_create_teas.rb
+  - Gemfile
+  - app/models/tea.rb
+  - app/views/teas/index.html.erb
+  - app/models/user.rb
+  - app/controllers/users_controller.rb
+  - app/controllers/sessions_controller.rb
+  - app/views/users/index.html.erb
+  - app/views/comments/_form.html.erb
+  - app/views/users/show.html.erb
+  - app/views/users/_form.html.erb
+  - db/schema.rb
+  - app/views/sessions/new.html
+  - app/views/users/new.html.erb
+  - app/controllers/tea_types_controller.rb
+  - app/controllers/white_controller.rb
+  - db/seeds.rb
+  - app/models/tea_type.rb
+  - app/models/post.rb

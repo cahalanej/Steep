@@ -41,17 +41,11 @@ class TeasController < ApplicationController
   # POST /teas
   # POST /teas.json
   def create
-    @tea = Tea.new(params[:tea])
-
-    respond_to do |format|
-      if @tea.save
-        format.html { redirect_to @tea, notice: 'Tea was successfully created.' }
-        format.json { render json: @tea, status: :created, location: @tea }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @tea.errors, status: :unprocessable_entity }
-      end
-    end
+    @user = User.find(params[:like][:user_id])
+    @like = @user.likes.create!(params[:like])
+    @likes = Like.find(params[:tea][:like_id])
+    @tea = @likes.tea.create!(params[:tea])
+    redirect_to @user
   end
 
   # PUT /teas/1
