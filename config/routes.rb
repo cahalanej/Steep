@@ -34,7 +34,10 @@ Steep::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
   
-  resources :users, :has_many => :comments
+  resources :users do
+    resources :posts
+  end 
+  
   resources :tea_types, :has_many => :teas
 
   match '/signup',  to: 'users#new'

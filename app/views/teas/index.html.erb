@@ -1,3 +1,18 @@
+<% if signed_in? %>
+  <div id="login"><%= link_to image_tag("/assets/logout.png", :border=>0), signout_path, method: "delete"%></div> 
+    <!--end login-->
+        
+  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
+
+  <%else%>
+    <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), signin_path%></div> 
+
+    <!--end login-->
+        
+    <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div>  <!--end signup-->
+  <%end%>
+
+
 <h1>Listing teas</h1>
 
 <table>
@@ -15,7 +30,11 @@
     <td><%= tea.name %></td>
     <td><%= tea.region %></td>
     <td><%= link_to tea.teaType.name, tea.teaType %></td>
+    <% if signed_in? %>
     <td><%= button_to 'Like', tea_likes_path(tea), method: :post%></td>
+    <%else%>
+    <td>to 'like' this tea, <%= link_to 'log in', signin_path%> </td>
+    <%end%>
   	<td><%= tea.likes.count %> Users like this tea</td>
 
   </tr>

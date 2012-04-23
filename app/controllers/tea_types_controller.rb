@@ -1,10 +1,6 @@
 class TeaTypesController < ApplicationController
   # GET /tea_types
   # GET /tea_types.json
-  def tea
-teas.where(teaType_id: 2)
-end
-  
   def index
     @tea_types = TeaType.all
 
@@ -17,7 +13,8 @@ end
   # GET /tea_types/1
   # GET /tea_types/1.json
   def show
-    @tea_type = TeaType.find(params[:id])
+    @teatype = TeaType.find(params[:id])
+    @teas = @teatype.teas
 
     respond_to do |format|
       format.html # show.html.erb

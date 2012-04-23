@@ -45,18 +45,14 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-
-    respond_to do |format|
-      if @user.save
-        
-        redirect_to user
-        sign_in @user
-        #format.json { render json: @user, status: :created, location: @user }
-      else
-        render 'new'
-      end
+    if @user.save
+      sign_in @user
+      redirect_to @user
+    else
+      render 'new'
     end
   end
+
 
   # PUT /users/1
   # PUT /users/1.json

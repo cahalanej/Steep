@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
- attr_accessible :name, :email, :password, :password_confirmation, :tea, :teaType, :description, :image
+  attr_accessible :name, :email, :password, :password_confirmation, :tea, :teaType, :description, :image
+
+
 
 has_secure_password
   before_save { |user| user.email = email.downcase }
@@ -14,10 +16,10 @@ has_secure_password
   validates :password_confirmation, presence: true
   belongs_to :tea
   belongs_to :teaType
-  has_many :comments
   has_many :posts
+  has_many :likes
+  has_many :teas, :through => :likes
   
-
   private
 
     def create_remember_token

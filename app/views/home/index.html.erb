@@ -92,6 +92,12 @@
 <!--<img src="app/assets/images/background.png" width="4800" height="3600" />-->
 <div class="header">
   <div id="search">
+      <%= form_tag teas_path, :method => 'get' do%>
+  <p>
+      <%= text_field_tag :search, params[:search]%>
+      <%= submit_tag "Search"%>
+  </p>
+  <%end%>
   </div>
   
   <div id="titleh">
@@ -110,11 +116,11 @@
 </div><!--end class container-->
 <div id="main">
   <div id="teas">
-    <div id="black"><%= link_to image_tag("/assets/black.png", :border=>0), black_index_path%></div>
-    <div id="green"><%= link_to image_tag("/assets/green.png", :border=>0), green_index_path%></div>
-    <div id="white"><%= link_to image_tag("/assets/white.png", :border=>0), white_index_path%></div>
-    <div id="yellow"><%= link_to image_tag("/assets/yellow.png", :border=>0), yellow_index_path%></div>
-    <div id="oolong"><%= link_to image_tag("/assets/oolong.png", :border=>0), oolong_index_path%>
+    <div id="black"><%= link_to image_tag("/assets/black.png", :border=>0), tea_type_path(:id => 1) %></div>
+    <div id="green"><%= link_to image_tag("/assets/green.png", :border=>0),tea_type_path(:id =>4) %></div>
+    <div id="white"><%= link_to image_tag("/assets/white.png", :border=>0), tea_type_path(:id =>3) %></div>
+    <div id="yellow"><%= link_to image_tag("/assets/yellow.png", :border=>0), tea_type_path(:id =>5) %></div>
+    <div id="oolong"><%= link_to image_tag("/assets/oolong.png", :border=>0), tea_type_path(:id =>2) %>
 				<!--<img src="/assets/oolong.png" alt="Oolong Teas"/></a>--></div> 
   </div>
   <div id="credits"></div>

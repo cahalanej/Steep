@@ -216,12 +216,19 @@ textarea#post_area {
 <div class="header">
 
     
-
-  <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), users_path%></div> 
+  <% if signed_in? %>
+  <div id="login"><%= link_to image_tag("/assets/logout.png", :border=>0), signout_path, method: "delete"%></div> 
     <!--end login-->
         
-  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div> <!--end signup-->
+  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
 
+  <%else%>
+    <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), signin_path%></div> 
+
+    <!--end login-->
+        
+    <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div>  <!--end signup-->
+  <%end%>
 </div><!--end class header"-->
 <div class="container">
 
@@ -267,28 +274,29 @@ textarea#post_area {
 </div>
 </div>
 
-<div id="wallposter">
-  <div id="commentboxes">
+<% if signed_in? %>
+  <div id="wallposter">
+   <div id="commentboxes">
   
-<%= form_for(@user.posts.build) do |f| %>
-  <%= f.hidden_field :user_id%>
-  <div id="posttitle">
-    <div class="field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
+    <%= form_for(@user.posts.build) do |f| %>
+      <%= f.hidden_field :user_id%>
+        <div id="posttitle">
+          <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :post %>
+          <%= f.text_area :post, :id => "post_area" %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :post %>
-    <%= f.text_area :post, :id => "post_area" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-</div>
-</div>
-
+<%end%>
 <div id="main">
   <div id="credits"></div>
 </div>
@@ -301,4 +309,3 @@ textarea#post_area {
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 <%= link_to "Settings", edit_user_path(current_user) %>
-<%= link_to "Sign out", signout_path, method: "delete" %>

@@ -80,10 +80,19 @@
 
     
 
-  <div id="login"></div> 
+<% if signed_in? %>
+  <div id="login"><%= link_to image_tag("/assets/logout.png", :border=>0), signout_path, method: "delete"%></div> 
     <!--end login-->
         
-  <div id="signup"></div> <!--end signup-->
+  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
+
+  <%else%>
+    <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), signin_path%></div> 
+
+    <!--end login-->
+        
+    <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div>  <!--end signup-->
+  <%end%>
 
 </div><!--end class header"-->
 <div class="container">

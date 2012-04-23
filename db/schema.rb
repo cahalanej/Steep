@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20120421204631) do
 
   create_table "tea_types", :force => true do |t|
     t.string   "name"
+    t.string   "title"
     t.string   "image"
     t.text     "repTea"
     t.datetime "created_at", :null => false

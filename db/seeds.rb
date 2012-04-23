@@ -5,12 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-types = TeaType.create([{name: 'Black', repTea:'Lapsang souchong, Keemun tea, Assam tea, Nilgiri tea, Rize Tea, Dian Hong tea'},
-{name: 'Oolong', repTea: 'Pouchong, Tieguanyin, Rou Gui, Darjeeling tea, Dong Ding tea, Shui Hsien tea'},
-{name: 'White', repTea: 'Assam tea, Shou Mei tea, Bai Mu Dan tea, Bai Hao Yinzhen tea, Ceylon tea, Darjeeling white tea'}, 
-{name: 'Green', repTea: 'Sencha, Pouchong, Gyokuro, Genmaicha, Assam tea, Hojicha, Green tea'},
-{name: 'Yellow', repTea: 'Junshan Yinzhen tea, Huoshan Huangya tea'}])
+types = TeaType.create([{name: 'Black', title: 'blacktitle.png', image: 'black.png', repTea:'Lapsang souchong, Keemun tea, Assam tea, Nilgiri tea, Rize Tea, Dian Hong tea'},
+{name: 'Oolong', title: 'oolongtitle.png', image: 'oolong.png', repTea: 'Pouchong, Tieguanyin, Rou Gui, Darjeeling tea, Dong Ding tea, Shui Hsien tea'},
+{name: 'White', title: 'whitetitle.png',  image: 'white.png',repTea: 'Assam tea, Shou Mei tea, Bai Mu Dan tea, Bai Hao Yinzhen tea, Ceylon tea, Darjeeling white tea'}, 
+{name: 'Green', title: 'greentitle.png',  image: 'green.png',repTea: 'Sencha, Pouchong, Gyokuro, Genmaicha, Assam tea, Hojicha, Green tea'},
+{name: 'Yellow', title: 'yellowtitle.png',  image: 'yellow.png',repTea: 'Junshan Yinzhen tea, Huoshan Huangya tea'}])
 
 
 Tea.create(name: 'Ban Tian Yao tea', teaType: types.second, region: 'Wuyi Mountains')
