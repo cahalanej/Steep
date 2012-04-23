@@ -41,7 +41,6 @@ body {
 
 #login { 
   position:absolute;
-  background: url(<%= asset_path 'logintab.png' %>) no-repeat scroll 0 0;
 	width:197px;
 	height:212px;
 	z-index:1;
@@ -59,7 +58,6 @@ body {
 	z-index:2;
 	left: 1415px;
 	top: -15px;
-	background: url(<%= asset_path 'signuptab.png' %>) no-repeat scroll 0 0;
   
 	/*width: 15%;*/
     /*height: 350px;*/
@@ -114,6 +112,15 @@ body {
 	left: 16px;
 	top: 366px;
 }
+#txt{
+  position:absolute;
+  left:100px;
+  top:70px;
+  height:455px;
+  width:600px;
+  z-index:5;
+  overflow:auto;
+}
 
 </style>
 </head>
@@ -128,7 +135,7 @@ body {
   <div id="login"><%= link_to image_tag("/assets/logout.png", :border=>0), signout_path, method: "delete"%></div> 
     <!--end login-->
         
-  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
+  <div id="signup"><%= link_to image_tag("/assets/profile.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
 
   <%else%>
     <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), signin_path%></div> 
@@ -145,29 +152,25 @@ body {
   <div id="paperbox">  <div id = "txt">  
     <table>
       <tr>
-    <!--<th>Typename</th>-->
-    <!--<th>Image</th> -->
-        <th>Representative Teas</th>
-    <!-- <th>Article</th> -->
-          <th></th>
-          <th></th>
-          <th></th>
-          </tr>
-</table>
-<table>
-
-<% @teatype.teas.each do |tea| %>
-    <h3><%= @teas.name %></h3>
-    <td><%=@teas.region%> </td>
-
+        <td><h3> Tea </h3></td>
+        <td><h3> Region </h3></td>
+      </tr>
+          <% @teatype.teas.each do |tea| %>
+  <tr>
+<h3><td><%= tea.name %></td></h3>
+    <td>&nbsp;&nbsp;&nbsp;<%=tea.region%> </td>
     <% if signed_in? %>
-    <td><%= button_to 'Like', tea_likes_path(tea), method: :post%></td>
+    <td><%= link_to image_tag("/assets/likesmall.png"), tea_likes_path(tea, @tea_type), method: :post%></td>
+    <td><%= tea.likes.count('user_id', :distinct => true) %> Users like this tea</td>
     <%else%>
-    <td>to 'like' this tea, <%= link_to 'log in', signin_path%> </td>
+    <td><%= tea.likes.count('user_id', :distinct => true) %> Users like this tea</td>
+    <td>&nbsp;&nbsp;&nbsp;<%= link_to 'log in', signin_path%> to 'like' this tea </td>
     <%end%>
-  	<td><%= tea.likes.count %> Users like this tea</td>
-    </br>
+  	
+    
    
+
+ </tr>
 <% end %>
 </table>
 
@@ -175,8 +178,7 @@ body {
 
 <br />
 </div>
-    
-    <div id="like"></div>
+
   </div>
 </div>
 </body>

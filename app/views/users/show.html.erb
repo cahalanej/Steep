@@ -34,14 +34,13 @@ body {
 
 
 #login { 
-	background: url(<%= asset_path 'logintab.png' %>) no-repeat scroll 0 0;
+
     /*margin: 0px 1000px 200px 0px;*/
 	/*width: 15%;*/
     /*height: 350px;*/
 }
 
 #signup {
-	background: url(<%= asset_path 'signuptab.png' %>) no-repeat scroll 0 0;
 	/*width: 15%;*/
     /*height: 350px;*/
 }
@@ -151,6 +150,16 @@ body {
 	left: 666px;
 	top: 27px;
 }
+
+#teaslikedscroll {
+  position:absolute;
+  width:430px;
+  height:100px;
+  z-index:10;
+  overflow:auto;
+
+  
+}
 #typesliked {
 	position:absolute;
 	width:602px;
@@ -181,7 +190,8 @@ body {
   width:430px;
   height:270px;
   z-index:10;
-  overflow:scroll;
+
+  overflow:auto;
 }
 #wallposter{
   background: url(<%= asset_path 'commentbox.png' %>) no-repeat scroll 0 0;
@@ -191,6 +201,7 @@ body {
   z-index:9;
   left:664px;
   top:800px;
+  
 }
 #commentboxes {
     position:absolute;
@@ -207,7 +218,11 @@ textarea#post_area {
 
 <body>
 <div id="teasliked">
-
+  <div id="teaslikedscroll">
+<% @user.teas.uniq.each do |tea| %>
+  <h3><%= tea.name %></h3>
+<%end%>
+</div>
   
   
 </div>
@@ -220,7 +235,7 @@ textarea#post_area {
   <div id="login"><%= link_to image_tag("/assets/logout.png", :border=>0), signout_path, method: "delete"%></div> 
     <!--end login-->
         
-  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
+  <div id="signup"><%= link_to image_tag("/assets/profile.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
 
   <%else%>
     <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), signin_path%></div> 
@@ -279,24 +294,25 @@ textarea#post_area {
    <div id="commentboxes">
   
     <%= form_for(@user.posts.build) do |f| %>
-      <%= f.hidden_field :user_id%>
-        <div id="posttitle">
-          <div class="field">
-            <%= f.label :title %>
-            <%= f.text_field :title %>
-          </div>
-        </div>
-        <div class="field">
-          <%= f.label :post %>
-          <%= f.text_area :post, :id => "post_area" %>
-        </div>
-        <div class="actions">
-          <%= f.submit %>
-        </div>
-    <% end %>
+  <%= f.hidden_field :user_id%>
+  <div id="posttitle">
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
   </div>
+  <div class="field">
+    <%= f.label :post %>
+    <%= f.text_area :post, :id => "post_area" %>
   </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+</div>
 <%end%>
+
 <div id="main">
   <div id="credits"></div>
 </div>

@@ -6,11 +6,11 @@ class CreateUsers < ActiveRecord::Migration
       t.string :image
       t.text :description
       t.belongs_to :tea
-      t.belongs_to :teaType
+      t.belongs_to :tea_type
 
       t.timestamps
     end
     add_index :users, :tea_id
-    add_index :users, :teaType_id
+    add_index :users, :tea_type_id
   end
 end

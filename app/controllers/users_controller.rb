@@ -4,12 +4,7 @@ class UsersController < ApplicationController
   
  #before_filter :authenticate, :except => [:index, :show]
   def index
-    @users = User.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @users }
-    end
+    @users = User.search(params[:search])
   end
 
   # GET /users/1
@@ -18,6 +13,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @post = @user.posts.build 
     @posts = @user.posts
+    @likes = @user.likes
+    @teas=@user.teas
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }

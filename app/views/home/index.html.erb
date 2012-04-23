@@ -92,10 +92,17 @@
 <!--<img src="app/assets/images/background.png" width="4800" height="3600" />-->
 <div class="header">
   <div id="search">
-      <%= form_tag teas_path, :method => 'get' do%>
+      <%= form_tag search_path, :method => 'get' do%>
   <p>
       <%= text_field_tag :search, params[:search]%>
-      <%= submit_tag "Search"%>
+      <%= submit_tag "Search", :name => nil %>
+  </p>
+  <%end%>
+  <div id="search">
+      <%= form_tag users_path, :method => 'get' do%>
+  <p>
+      <%= text_field_tag :search, params[:search]%>
+      <%= submit_tag "Search", :name => nil %>
   </p>
   <%end%>
   </div>
@@ -103,13 +110,19 @@
   <div id="titleh">
   </div> <!--end title-->
     
+  <% if signed_in? %>
+  <div id="login"><%= link_to image_tag("/assets/logout.png", :border=>0), signout_path, method: "delete"%></div> 
+    <!--end login-->
+        
+  <div id="signup"><%= link_to image_tag("/assets/profile.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
 
-  <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), signin_path%></div> 
+  <%else%>
+    <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), signin_path%></div> 
 
     <!--end login-->
         
-  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div>  <!--end signup-->
-
+    <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div>  <!--end signup-->
+  <%end%>
 </div><!--end class header"-->
 <div class="container">
 

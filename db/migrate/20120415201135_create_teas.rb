@@ -4,10 +4,10 @@ class CreateTeas < ActiveRecord::Migration
       t.string :name
       t.string :region
       t.string :image_id
-      t.belongs_to :teaType
+      t.belongs_to :tea_type
 
       t.timestamps
     end
-    add_index :teas, :teaType_id
+    add_index :teas, :tea_type_id
   end
 end

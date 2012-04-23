@@ -1,8 +1,114 @@
+  
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Teas</title>
+<style type="text/css">
+body {
+    font-family: PTSansRegular;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    line-height: 1;
+}
+
+body {
+	background-attachment: scroll;
+	background-color: #FC9;
+	background-image: url(<%= asset_path 'bg1920x1080.png' %>);
+	background-repeat: no-repeat;
+	background-position: fixed;
+}
+
+.header {
+	width: 1920px;
+	height: 360px;
+	/*margin: 0 auto auto 0;*/
+}
+
+
+
+#login { 
+  position:absolute;
+	width:197px;
+	height:212px;
+	z-index:1;
+	left: 1274px;
+	top: -7px;
+    /*margin: 0px 1000px 200px 0px;*/
+	/*width: 15%;*/
+    /*height: 350px;*/
+}
+
+#signup {
+  position:absolute;
+	width:223px;
+	height:239px;
+	z-index:2;
+	left: 1415px;
+	top: -15px;
+  
+	/*width: 15%;*/
+    /*height: 350px;*/
+}
+
+
+#paperbox {
+  position:absolute;
+  background: url(<%= asset_path 'paperbox.png' %>) no-repeat scroll 0 0;
+	width:784px;
+	height:567px;
+	z-index:4;
+	left: 500px;
+	top: -200px;
+}	
+
+
+#credits {
+  position:absolute;
+  background: url(<%= asset_path 'credits.png' %>) no-repeat scroll 0 0;
+	width:252px;
+	height:185px;
+	z-index:2;
+	left: -41px;
+	top: 256px;
+}
+
+#main {
+	position:absolute;
+	width:1882px;
+	height:425px;
+	z-index:3;
+	left: 16px;
+	top: 366px;
+}
+#txt{
+  position:absolute;
+  left:80px;
+  top:80px;
+  height:400px;
+  width:600px;
+  z-index:5;
+  overflow:auto;
+}
+
+</style>
+</head>
+
+<body>
+<!--<img src="images/background.png" width="4800" height="3600" />-->
+<div class="header">
+<div id="title">
+     </div><!--end title-->
+     
 <% if signed_in? %>
   <div id="login"><%= link_to image_tag("/assets/logout.png", :border=>0), signout_path, method: "delete"%></div> 
     <!--end login-->
         
-  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
+  <div id="signup"><%= link_to image_tag("/assets/profile.png", :border=>0), user_path(current_user)%></div> <!--end signup-->
 
   <%else%>
     <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), signin_path%></div> 
@@ -11,10 +117,13 @@
         
     <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div>  <!--end signup-->
   <%end%>
+</div>
+<div id="main">
 
-
-<h1>Listing teas</h1>
-
+  <div id="credits"></div>
+  <div id="bigoolong"></div>
+  <div id="paperbox">  <div id = "txt">  
+    <h1>Results</h1>
 <table>
   <tr>
     <th>Name</th>
@@ -29,18 +138,26 @@
   <tr>
     <td><%= tea.name %></td>
     <td><%= tea.region %></td>
-    <td><%= link_to tea.teaType.name, tea.teaType %></td>
+    <td><%= link_to tea.tea_type.name, tea.tea_type %></td>
     <% if signed_in? %>
-    <td><%= button_to 'Like', tea_likes_path(tea), method: :post%></td>
+    <td><%= link_to image_tag("/assets/likesmall.png"), tea_likes_path(tea), method: :post%></td>
+    <td><%= tea.likes.count %> Users like this tea</td>
     <%else%>
-    <td>to 'like' this tea, <%= link_to 'log in', signin_path%> </td>
+    <td><%= tea.likes.count %> Users like this tea</td>
+    <td>&nbsp;&nbsp;<%= link_to 'log in', signin_path%> to 'like' this tea </td>
     <%end%>
-  	<td><%= tea.likes.count %> Users like this tea</td>
 
   </tr>
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Tea', new_tea_path %>
+
+<br />
+</div>
+    
+    <div id="like"></div>
+  </div>
+</div>
+</body>
+</html>

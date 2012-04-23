@@ -1,9 +1,150 @@
-<% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Steep - An App for All Things Tea</title>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(:session, url: sessions_path) do |f| %>
+<style type="text/css">
+
+
+body {
+    font-family: PTSansRegular;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    line-height: 1;
+}
+
+body {
+	background-attachment: scroll;
+	background-color: #FC9;
+	background-image: url(<%= asset_path 'bg1920x1080.png' %>);
+	background-repeat: no-repeat;
+	background-position: fixed;
+}
+
+.header {
+	width: 1920px;
+	height: 360px;
+	/*margin: 0 auto auto 0;*/
+}
+
+.form {
+  position:absolute;
+	z-index:1;
+	/*left: 327px;*/
+  left: 150px;
+	top: 30px;
+  text-align: center;
+  
+}
+
+#burlap {
+  position:absolute;  
+  width: 525px;
+  height: 900px;
+	z-index: 0;
+  left: 525px;
+	top: 30px;
+  background-repeat: no-repeat;
+     background-image: url(<%= asset_path 'burlopsignup.png' %>);
+}
+
+#login { 
+	/*<background: url(<%= asset_path 'logintab.png' %>) no-repeat scroll 0 0;*/
+    /*margin: 0px 1000px 200px 0px;*/
+	/*width: 15%;*/
+    /*height: 350px;*/
+}
+
+#signup {
+	/*background: url(<%= asset_path 'signuptab.png' %>) no-repeat scroll 0 0;*/
+	/*width: 15%;*/
+    /*height: 350px;*/
+}
+
+.container {
+    width: 1920px;
+	height: auto;
+} 
+
+#credits {
+	background: url(<%= asset_path 'credits.png' %>) no-repeat scroll 0 0;
+}	
+#login {
+	position:absolute;
+	width:278px;
+	height:217px;
+	z-index:1;
+	left: 1274px;
+	top: -6px;
+}
+#signup {
+	position:absolute;
+	width:216px;
+	height:244px;
+	z-index:2;
+	left: 1415px;
+	top: -14px;
+}
+#main {
+	position:absolute;
+	width:1882px;
+	height:425px;
+	z-index:3;
+	left: 16px;
+	top: 366px;
+}
+#credits {
+	position:absolute;
+	width:252px;
+	height:185px;
+	z-index:2;
+	left: -41px;
+	top: 256px;
+}
+
+#error_explanation {
+  position: absolute;
+  top: 350px;
+  left: 1100px;
+
+  color:#f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
+</style>
+</head>
+
+
+  <body>
+  <div class="header">
+
+    
+
+  <div id="login"><%= link_to image_tag("/assets/logintab.png", :border=>0), users_path%></div> 
+    <!--end login-->
+        
+  <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div> <!--end signup-->
+
+</div>
+  <div class="container">
+  </div>
+  <div id="burlap">
+  <div class="form">
+    <div id="title">
+   <h1> Sign In </h1>
+   <%= form_for(:session, url: sessions_path) do |f| %>
 
       <%= f.label :email %>
       <%= f.text_field :email %>
@@ -11,9 +152,14 @@
       <%= f.label :password %>
       <%= f.password_field :password %>
 
+      <br/>
       <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
     <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
 </div>
+</div>
+  <div id="main">
+  <div id="credits"></div>
+</div>
+
+</body>

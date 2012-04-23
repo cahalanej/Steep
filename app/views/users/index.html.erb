@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Steep - An App for All Things Tea</title>
-<link rel="stylesheet" type="text/css" href="profilestyle.css" />
+<link rel="stylesheet" type="text/css" href="/assets/users.css.erb" />
 <style type="text/css">
 #login {
 	position:absolute;
@@ -37,38 +37,7 @@
 	left: -41px;
 	top: 256px;
 }
-#username {
-	position:absolute;
-	width:400px;
-	height:127px;
-	z-index:4;
-	left: 221px;
-	top: 31px;
-}
-#profilepic {
-	position:absolute;
-	width:411px;
-	height:417px;
-	z-index:5;
-	left: 211px;
-	top: 166px;
-}
-#teasliked {
-	position:absolute;
-	width:511px;
-	height:371px;
-	z-index:6;
-	left: 666px;
-	top: 27px;
-}
-#typesliked {
-	position:absolute;
-	width:602px;
-	height:355px;
-	z-index:7;
-	left: 664px;
-	top: 422px;
-}
+
 </style>
 </head>
 
@@ -107,7 +76,7 @@
 </html>
 
 
-<h1>Listing users</h1>
+<h1>Users</h1>
 <table>
   <tr>
     <th>Name</th>
@@ -123,19 +92,16 @@
 
 <% @users.each do |user| %>
   <tr>
+    <td><%= thumbnail_for user %></td>
     <td><%= user.name %></td>
     <td><%= user.email %></td>
     <td><%= user.image %></td>
     <td><%= user.description %></td>
-    <td><%= user.tea %></td>
-    <td><%= user.teaType %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'View Profile Page', user %></td>
+    
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>

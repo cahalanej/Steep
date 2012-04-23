@@ -3,11 +3,7 @@ class TeaTypesController < ApplicationController
   # GET /tea_types.json
   def index
     @tea_types = TeaType.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @tea_types }
-    end
+  
   end
 
   # GET /tea_types/1

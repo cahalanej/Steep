@@ -1,6 +1,7 @@
 Steep::Application.routes.draw do
  
-  resources :posts
+ 
+
 
   get "home/index"
 
@@ -29,6 +30,7 @@ Steep::Application.routes.draw do
 
   
   resources :teas do
+    get 'search'
     resources :likes
   end
 
@@ -38,8 +40,9 @@ Steep::Application.routes.draw do
     resources :posts
   end 
   
-  resources :tea_types, :has_many => :teas
-
+  resources :tea_types do
+  end
+  match '/teas/search' => 'teas#search', :as => "search"
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete

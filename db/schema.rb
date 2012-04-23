@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120421204631) do
+ActiveRecord::Schema.define(:version => 20120423175957) do
 
   create_table "comments", :force => true do |t|
     t.string   "title"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(:version => 20120421204631) do
 
   add_index "likes", ["tea_id"], :name => "index_likes_on_tea_id"
   add_index "likes", ["user_id"], :name => "index_likes_on_user_id"
+
+  create_table "liketts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "tea_type_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "liketts", ["tea_type_id"], :name => "index_liketts_on_tea_type_id"
+  add_index "liketts", ["user_id"], :name => "index_liketts_on_user_id"
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -58,12 +68,12 @@ ActiveRecord::Schema.define(:version => 20120421204631) do
     t.string   "name"
     t.string   "region"
     t.string   "image_id"
-    t.integer  "teaType_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "tea_type_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "teas", ["teaType_id"], :name => "index_teas_on_teaType_id"
+  add_index "teas", ["tea_type_id"], :name => "index_teas_on_tea_type_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -71,7 +81,7 @@ ActiveRecord::Schema.define(:version => 20120421204631) do
     t.string   "image"
     t.text     "description"
     t.integer  "tea_id"
-    t.integer  "teaType_id"
+    t.integer  "tea_type_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
@@ -80,7 +90,7 @@ ActiveRecord::Schema.define(:version => 20120421204631) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
-  add_index "users", ["teaType_id"], :name => "index_users_on_teaType_id"
   add_index "users", ["tea_id"], :name => "index_users_on_tea_id"
+  add_index "users", ["tea_type_id"], :name => "index_users_on_tea_type_id"
 
 end

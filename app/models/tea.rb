@@ -7,12 +7,12 @@ class Tea < ActiveRecord::Base
   
   def self.search(search)
   if search
-    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    find(:all, :conditions => ['name || region LIKE ?', "%#{search}%"])
   else
     find(:all)
   end
   
 end
-  belongs_to :teaType
+  belongs_to :tea_type
   has_many :likes
 end

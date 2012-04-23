@@ -15,10 +15,19 @@ has_secure_password
   validates :password, length: { minimum: 6 }
   validates :password_confirmation, presence: true
   belongs_to :tea
-  belongs_to :teaType
+  belongs_to :tea_type
   has_many :posts
   has_many :likes
   has_many :teas, :through => :likes
+  
+  
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name || email LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
   
   private
 

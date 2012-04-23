@@ -15,12 +15,8 @@ class LikesController < ApplicationController
   # GET /likes/1
   # GET /likes/1.json
   def show
-    @like = Like.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @like }
-    end
+    @likes = like.all
+    redirect_to(:back)
   end
 
   # GET /likes/new
