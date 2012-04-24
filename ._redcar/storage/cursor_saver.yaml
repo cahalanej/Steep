@@ -120,9 +120,6 @@ cursor_positions:
   - :path: app/views/users/new.html.erb
     :cursor_offset: 0
     :timestamp: 2012-04-23 01:36:26.895000 -04:00
-  - :path: app/controllers/white_controller.rb
-    :cursor_offset: 0
-    :timestamp: 2012-04-23 01:36:26.638000 -04:00
   - :path: db/seeds.rb
     :cursor_offset: 4420
     :timestamp: 2012-04-23 01:56:24.225000 -04:00
@@ -150,9 +147,6 @@ cursor_positions:
   - :path: app/controllers/home_controller.rb
     :cursor_offset: 0
     :timestamp: 2012-04-23 01:36:26.606000 -04:00
-  - :path: app/views/comments/_form.html.erb
-    :cursor_offset: 0
-    :timestamp: 2012-04-23 01:36:26.735000 -04:00
   - :path: app/controllers/sessions_controller.rb
     :cursor_offset: 0
     :timestamp: 2012-04-23 01:36:26.622000 -04:00
@@ -191,9 +185,6 @@ cursor_positions:
   - :path: app/controllers/users_controller.rb
     :cursor_offset: 461
     :timestamp: 2012-04-23 13:34:02.110000 -04:00
-  - :path: app/models/comment.rb
-    :cursor_offset: 0
-    :timestamp: 2012-04-23 01:36:26.700000 -04:00
   - :path: app/models/post.rb
     :cursor_offset: 0
     :timestamp: 2012-04-23 01:36:26.707000 -04:00
@@ -327,4 +318,16 @@ cursor_positions:
   - :path: app/assets/stylesheets/oolong.css.scss
     :cursor_offset: 0
     :timestamp: 2012-04-23 14:55:14.205000 -04:00
+  - :path: app/views/comments/_form.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.420000 -04:00
+  - :path: app/controllers/white_controller.rb
+    :cursor_offset: 148
+    :timestamp: 2012-04-23 14:55:14.316000 -04:00
+  - :path: app/models/comment.rb
+    :cursor_offset: 76
+    :timestamp: 2012-04-23 14:55:14.378000 -04:00
+  - :path: app/controllers/grants_controller.rb
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.275000 -04:00
 files_to_retain: 0

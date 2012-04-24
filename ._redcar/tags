@@ -1,4 +1,4 @@
-1335240554
+1335241429
 AddIndexToUsersEmail	C:/Users/Jen/Steep/db/migrate/20120416150737_add_index_to_users_email.rb	class AddIndexToUsersEmail 
 AddPasswordDigestToUsers	C:/Users/Jen/Steep/db/migrate/20120416151153_add_password_digest_to_users.rb	class AddPasswordDigestToUsers 
 AddRememberTokenToUsers	C:/Users/Jen/Steep/db/migrate/20120417014526_add_remember_token_to_users.rb	class AddRememberTokenToUsers 
