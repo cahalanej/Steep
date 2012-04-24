@@ -6,9 +6,6 @@ cursor_positions:
   - :path: app/views/teas/new.html.erb
     :cursor_offset: 0
     :timestamp: 2012-04-16 10:50:21.203000 -04:00
-  - :path: app/views/layouts/application.html.erb
-    :cursor_offset: 201
-    :timestamp: 2012-04-16 20:51:11.011000 -04:00
   - :path: app/views/teas/_form.html.erb
     :cursor_offset: 754
     :timestamp: 2012-04-16 20:47:46.196000 -04:00
@@ -117,9 +114,6 @@ cursor_positions:
   - :path: app/views/comments/_comment.html.erb
     :cursor_offset: 0
     :timestamp: 2012-04-21 17:49:46.439000 -04:00
-  - :path: app/views/comments/show.html.erb
-    :cursor_offset: 194
-    :timestamp: 2012-04-21 17:49:46.466000 -04:00
   - :path: db/migrate/20120415195758_create_tea_types.rb
     :cursor_offset: 159
     :timestamp: 2012-04-22 19:43:54.502000 -04:00
@@ -186,9 +180,6 @@ cursor_positions:
   - :path: app/helpers/likes_helper.rb
     :cursor_offset: 0
     :timestamp: 2012-04-23 01:36:26.664000 -04:00
-  - :path: app/assets/stylesheets/teas.css.scss
-    :cursor_offset: 35
-    :timestamp: 2012-04-23 01:36:26.540000 -04:00
   - :path: app/views/sessions/new.html
     :cursor_offset: 975
     :timestamp: 2012-04-23 03:36:34.712000 -04:00
@@ -212,9 +203,6 @@ cursor_positions:
   - :path: app/models/tea_type.rb
     :cursor_offset: 0
     :timestamp: 2012-04-23 01:36:26.715000 -04:00
-  - :path: app/views/teas/show.html.erb
-    :cursor_offset: 3061
-    :timestamp: 2012-04-23 12:08:15.963000 -04:00
   - :path: app/views/teas/search.html.erb
     :cursor_offset: 3061
     :timestamp: 2012-04-23 12:07:35.675000 -04:00
@@ -265,9 +253,6 @@ cursor_positions:
     :timestamp: 2012-04-23 13:43:41.970000 -04:00
     :selection_offset: 248
     :block_selection_mode: false
-  - :path: app/assets/stylesheets/tea_types.css.erb
-    :cursor_offset: 0
-    :timestamp: 2012-04-23 01:36:26.532000 -04:00
   - :path: app/views/tea_types/show.html.erb
     :cursor_offset: 2909
     :timestamp: 2012-04-23 13:38:19.132000 -04:00
@@ -309,4 +294,37 @@ cursor_positions:
   - :path: app/assets/stylesheets/posts.css.scss
     :cursor_offset: 0
     :timestamp: 2012-04-23 14:55:14.209000 -04:00
+  - :path: app/assets/stylesheets/teas.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.231000 -04:00
+  - :path: app/assets/stylesheets/sessions.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.218000 -04:00
+  - :path: app/assets/stylesheets/tea_types.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.227000 -04:00
+  - :path: app/assets/stylesheets/tea_types.css.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.223000 -04:00
+  - :path: app/assets/stylesheets/home.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.192000 -04:00
+  - :path: app/views/comments/show.html.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.437000 -04:00
+  - :path: app/views/layouts/application.html.erb
+    :cursor_offset: 232
+    :timestamp: 2012-04-23 22:39:06.577000 -04:00
+  - :path: app/views/teas/show.html.erb
+    :cursor_offset: 655
+    :timestamp: 2012-04-23 23:44:11.676000 -04:00
+  - :path: app/assets/stylesheets/likes.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.196000 -04:00
+  - :path: app/assets/stylesheets/oolong.css.erb
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.200000 -04:00
+  - :path: app/assets/stylesheets/oolong.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.205000 -04:00
 files_to_retain: 0
