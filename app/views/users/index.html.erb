@@ -29,6 +29,15 @@
 	left: 16px;
 	top: 366px;
 }
+#paperbox {
+  position:absolute;
+  background: url(<%= asset_path 'paperbox.png' %>) no-repeat scroll 0 0;
+	width:784px;
+	height:567px;
+	z-index:4;
+	left: 500px;
+	top: -200px;
+}	
 #credits {
 	position:absolute;
 	width:252px;
@@ -36,6 +45,21 @@
 	z-index:2;
 	left: -41px;
 	top: 256px;
+}
+#txt{
+  position:absolute;
+  left:80px;
+  top:60px;
+  height:400px;
+  width:600px;
+  z-index:5;
+  overflow:auto;
+}
+
+#home {
+  position:absolute;
+  top:20px;
+  left:20px;
 }
 
 </style>
@@ -70,11 +94,8 @@
 <div id="username"></div>
 <div id="profilepic"></div>
 <div id="main">
-  <div id="credits"></div>
-</div>
-</body>
-</html>
-
+  <div id="paperbox">  <div id = "txt">  
+    
 
 <h1>Users</h1>
 <table>
@@ -82,7 +103,6 @@
     <th>Name</th>
     <th>Email</th>
     <th>Image</th>
-    <th>Description</th>
     <th>Tea</th>
     <th>Teatype</th>
     <th></th>
@@ -96,7 +116,6 @@
     <td><%= user.name %></td>
     <td><%= user.email %></td>
     <td><%= user.image %></td>
-    <td><%= user.description %></td>
     <td><%= link_to 'View Profile Page', user %></td>
     
   </tr>
@@ -104,4 +123,17 @@
 </table>
 
 <br />
+</div>
+</div>
+    
+  <div id="credits"></div>
+</div>
+
+<div id="home">
+    <%= link_to image_tag("/assets/hometab.png", :border=>0), root_path%>
+  
+  </div>
+</body>
+</html>
+
 

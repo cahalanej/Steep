@@ -95,6 +95,12 @@ body {
   overflow:auto;
 }
 
+#home {
+  position:absolute;
+  top:20px;
+  left:20px;
+}
+
 </style>
 </head>
 
@@ -159,5 +165,10 @@ body {
     <div id="like"></div>
   </div>
 </div>
+
+<div id="home">
+    <%= link_to image_tag("/assets/hometab.png", :border=>0), root_path%>
+  
+  </div>
 </body>
 </html>

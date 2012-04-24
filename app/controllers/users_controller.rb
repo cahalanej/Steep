@@ -10,11 +10,21 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @tea = Tea
     @user = User.find(params[:id])
-    @post = @user.posts.build 
+    @post = @user.posts.build()
     @posts = @user.posts
     @likes = @user.likes
     @teas=@user.teas
+    @rand = @teas.find :first, :offset => ( @teas.count * rand ).to_i
+    if (@rand != nil)
+      @randtype = @rand.tea_type
+      @randtea = Tea.where('tea_type_id =?' , @randtype)
+      @rtea = @randtea.find :first, :offset => ( @randtea.count * rand ).to_i
+      
+    end
+      
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @user }
@@ -74,7 +84,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { redirect_to root_url }
       format.json { head :no_content }
     end
   end

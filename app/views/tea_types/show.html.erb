@@ -122,6 +122,12 @@ body {
   overflow:auto;
 }
 
+#home {
+  position:absolute;
+  top:20px;
+  left:20px;
+}
+
 </style>
 </head>
 
@@ -166,21 +172,17 @@ body {
     <td><%= tea.likes.count('user_id', :distinct => true) %> Users like this tea</td>
     <td>&nbsp;&nbsp;&nbsp;<%= link_to 'log in', signin_path%> to 'like' this tea </td>
     <%end%>
-  	
-    
-   
-
  </tr>
 <% end %>
 </table>
-
-
-
 <br />
 </div>
-
   </div>
 </div>
+
+<div id="home">
+    <%= link_to image_tag("/assets/hometab.png", :border=>0), root_path%>
+  
+  </div>
 </body>
 </html>
-}	

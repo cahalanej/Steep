@@ -4,6 +4,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Steep - An App for All Things Tea</title>
 <link rel="stylesheet" type="text/css" href="/assets/home.css.erb" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+function toggleTab(thechosenone) {
+      var search = document.getElementsByTagName("div");
+            for(var x=0; x<search.length; x++) {
+                  name = search[x].getAttribute("name");
+                  if (name == 'search') {
+                        if (search[x].id == thechosenone) {
+                        search[x].style.display = 'block';
+                  }
+                  else {
+                        search[x].style.display = 'none';
+                  }
+            }
+      }
+}
+</script>
+
 <style type="text/css">
 #login {
 	position:absolute;
@@ -85,23 +103,31 @@
 	left: -41px;
 	top: 256px;
 }
+#searchusers {
+  display:none;
+}
 </style>
 </head>
 
 <body>
 <!--<img src="app/assets/images/background.png" width="4800" height="3600" />-->
 <div class="header">
-  <div id="search">
+  <div class="search-choices">
+    <a href="javascript:toggleTab('searchteas');"> Search Teas </a>
+    <a href="javascript:toggleTab('searchusers');"> Search Users </a>
+  </div>
+  <div name="search" id="searchteas">
       <%= form_tag search_path, :method => 'get' do%>
   <p>
-      <%= text_field_tag :search, params[:search]%>
+      <%= text_field_tag :search, params[:search], :placeholder =>"search teas"%>
       <%= submit_tag "Search", :name => nil %>
   </p>
   <%end%>
-  <div id="search">
+</div>
+  <div name="search" id="searchusers">
       <%= form_tag users_path, :method => 'get' do%>
   <p>
-      <%= text_field_tag :search, params[:search]%>
+      <%= text_field_tag :search, params[:search], :placeholder =>"search users"%>
       <%= submit_tag "Search", :name => nil %>
   </p>
   <%end%>

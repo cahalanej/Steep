@@ -26,7 +26,7 @@ Steep::Application.routes.draw do
   get "oolong/show"
 
   resources :comments
-
+  resources :posts
 
   
   resources :teas do

@@ -114,9 +114,6 @@ cursor_positions:
   - :path: app/views/teas/_search_results.html
     :cursor_offset: 91
     :timestamp: 2012-04-21 15:49:25.135000 -04:00
-  - :path: app/views/comments/edit.html.erb
-    :cursor_offset: 0
-    :timestamp: 2012-04-21 17:49:46.456000 -04:00
   - :path: app/views/comments/_comment.html.erb
     :cursor_offset: 0
     :timestamp: 2012-04-21 17:49:46.439000 -04:00
@@ -189,9 +186,6 @@ cursor_positions:
   - :path: app/helpers/likes_helper.rb
     :cursor_offset: 0
     :timestamp: 2012-04-23 01:36:26.664000 -04:00
-  - :path: db/schema.rb
-    :cursor_offset: 2868
-    :timestamp: 2012-04-23 01:46:21.739000 -04:00
   - :path: app/assets/stylesheets/teas.css.scss
     :cursor_offset: 35
     :timestamp: 2012-04-23 01:36:26.540000 -04:00
@@ -283,9 +277,6 @@ cursor_positions:
   - :path: app/views/likes/index.html.erb
     :cursor_offset: 481
     :timestamp: 2012-04-23 01:36:26.781000 -04:00
-  - :path: app/assets/stylesheets/posts.css.scss
-    :cursor_offset: 0
-    :timestamp: 2012-04-23 01:36:26.518000 -04:00
   - :path: app/assets/stylesheets/home.css.erb
     :cursor_offset: 791
     :timestamp: 2012-04-23 02:28:05.260000 -04:00
@@ -303,4 +294,19 @@ cursor_positions:
   - :path: app/controllers/liketts_controller.rb
     :cursor_offset: 981
     :timestamp: 2012-04-23 14:36:18.852000 -04:00
+  - :path: db/development.sqlite3
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:56:55.924000 -04:00
+  - :path: db/schema.rb
+    :cursor_offset: 1031
+    :timestamp: 2012-04-23 14:56:56.071000 -04:00
+  - :path: app/views/comments/edit.html.erb
+    :cursor_offset: 119
+    :timestamp: 2012-04-23 14:55:14.425000 -04:00
+  - :path: app/views/users/_edit.html.erb
+    :cursor_offset: 887
+    :timestamp: 2012-04-23 20:44:16.063000 -04:00
+  - :path: app/assets/stylesheets/posts.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-04-23 14:55:14.209000 -04:00
 files_to_retain: 0

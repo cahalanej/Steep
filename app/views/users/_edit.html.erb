@@ -48,8 +48,7 @@ body {
 	z-index: 0;
   left: 525px;
 	top: 30px;
-  background-repeat: no-repeat;
-     background-image: url(<%= asset_path 'burlopsignup.png' %>);
+     background-image: url(<%= asset_path 'blankburlap.png' %>);
 }
 
 #login { 
@@ -126,6 +125,20 @@ body {
 </style>
 </head>
 
+<%= form_for(@user) do |f| %>
+  
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-error">
+      The form contains <%= pluralize(@user.errors.count, "error") %>.
+    </div>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <body>
   <div class="header">
@@ -143,16 +156,30 @@ body {
   <div id="burlap">
   <div class="form">
     <div id="title">
-   <h1> Sign In </h1>
-   <%= form_for(:session, url: sessions_path) do |f| %>
+   <h1> Sign Up </h1>
+    </div>
+<form class="well">
+  <div class="field">
+    <%= f.text_field :name, :placeholder => @user.name %>
+  </div>
+  <div class="field">
+    <%= f.text_field :email, :placeholder => @user.email %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password, :placeholder => 'enter or change password' %>
+  </div>
+  <div class="field">
+    <%= f.password_field :password_confirmation, :placeholder => 'confirm password' %>
+  </div>
+  <div class="field">
+    <%= f.text_area :description, :placeholder =>"tell us a little bit about yourself","cols" => 20, "rows" => 30 %>
+  </div>
+  
+  </form>
 
-      <%= f.text_field :email, :placeholder =>"email" %>
-
-      <%= f.password_field :password, :placeholder =>"password" %>
-
-      <br/>
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-    <% end %>
+ 
+  <div class="actions">
+    <%= f.submit class: 'btn-large btn-inverse' %>
   </div>
 </div>
 </div>
@@ -161,3 +188,4 @@ body {
 </div>
 
 </body>
+<% end %>

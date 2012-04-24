@@ -17,6 +17,7 @@ has_secure_password
   belongs_to :tea
   belongs_to :tea_type
   has_many :posts
+
   has_many :likes
   has_many :teas, :through => :likes
   

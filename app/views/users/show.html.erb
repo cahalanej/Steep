@@ -59,7 +59,7 @@ body {
 }
 
 #teasliked {
-	background: url(<%= asset_path 'teasliked.png' %>) no-repeat scroll 0 0;
+	background: url(<%= asset_path 'teasliked3.png' %>) no-repeat scroll 0 0;
 }
 
 #typesliked {
@@ -114,8 +114,9 @@ body {
 	width:400px;
 	height:127px;
 	z-index:5;
-	left: 170px;
+	left: 0px;
 	top: 40px;
+  text-align: center;
 }
 #profilepic {
 	position:absolute;
@@ -142,6 +143,16 @@ body {
 	left: 211px;
 	top: 575px;
 }
+
+#descriptionscroller {
+ position:absolute;
+	width:340px;
+	height:150px;
+	z-index:7;
+	left:22px;
+	top: 22px;
+  overflow:auto;
+}
 #teasliked {
 	position:absolute;
 	width:511px;
@@ -153,20 +164,14 @@ body {
 
 #teaslikedscroll {
   position:absolute;
-  width:430px;
-  height:100px;
+  left:50px;
+  top:80px;
+  width:400px;
+  height:240px;
   z-index:10;
   overflow:auto;
 
   
-}
-#typesliked {
-	position:absolute;
-	width:602px;
-	height:355px;
-	z-index:7;
-	left: 664px;
-	top: 222px;
 }
 #comments{
   background: url(<%= asset_path 'comments.png' %>) no-repeat scroll 0 0;
@@ -213,6 +218,57 @@ textarea#post_area {
   height:50px;
 }
 
+#recommend {
+  background: url(<%= asset_path 'commentbox.png' %>) no-repeat scroll 0 0;
+  position:absolute;
+  width:602px;
+  height:250px;
+  z-index:9;
+  left:164px;
+  top:800px;
+}
+
+#recommendtext{
+  position:absolute;
+  width:502px;
+  height:100px;
+  z-index:9;
+  top:50px; 
+  text-align:center;
+}
+#editbutton {
+  position:absolute;
+  width:502px;
+  height:250px;
+  z-index:9;
+  top:90px;
+  left:235px;
+}
+
+#deletebutton {
+  position:absolute;
+  width:502px;
+  height:250px;
+  z-index:9;
+  top:90px;
+  left:270px;
+}
+
+#changeimage {
+  position:absolute;
+  width:502px;
+  height:250px;
+  z-index:9;
+  top:90px;
+  left:130px;
+}
+
+#home {
+  position:absolute;
+  top:20px;
+  left:20px;
+}
+
 </style>
 </head>
 
@@ -226,7 +282,6 @@ textarea#post_area {
   
   
 </div>
-<div id="typesliked"></div>
 <!--<img src="images/background.png" width="4800" height="3600" />-->
 <div class="header">
 
@@ -244,15 +299,28 @@ textarea#post_area {
         
     <div id="signup"><%= link_to image_tag("/assets/signuptab.png", :border=>0), new_user_path%></div>  <!--end signup-->
   <%end%>
-</div><!--end class header"-->
+</div><!--end class header-->
 <div class="container">
 
 </div><!--end class container-->
 <%provide(:title, @user.name)%>
 <div id="username">
   <div id="actualname">
-    <%= @user.name %>
+    <h1><%= @user.name %></h1>
   </div>
+   <% if signed_in? %>
+  <% if @user == current_user%>
+  <div id="editbutton">
+  <%= link_to "Edit", edit_user_path(@user) %>
+  </div>
+  <div id ="deletebutton">
+  <%= link_to 'Delete User', current_user, confirm: 'Are you sure?', method: :delete %></td>
+  </div>
+  <div id = "changeimage">
+    <%= link_to "Change Image", href = "https://en.gravatar.com/site/login/%2Fsite%2Fsignup%2F" %>
+    </div>
+  <%end%>
+  <%end%>
 </div>
 
 <div id="profilepic">
@@ -262,7 +330,9 @@ textarea#post_area {
 </div>
 
 <div id="description">
+  <div id="descriptionscroller">
   <%= @user.description %>
+</div>
 </div>
 
 <div id="comments">
@@ -276,11 +346,11 @@ textarea#post_area {
 <table>
 
 <% @user.posts.each do |post| %>
-<!--at <%= post.created_at%>-->
+
     <h3><%= post.title %></h3>
-    <div>By <%= link_to post.user.name, post.user%> </div>
+
     <div><%= post.post %></div>
-    
+
     </br>
    
 <% end %>
@@ -293,9 +363,10 @@ textarea#post_area {
   <div id="wallposter">
    <div id="commentboxes">
   
-    <%= form_for(@user.posts.build) do |f| %>
+  <%= form_for(@post) do |f| %>
   <%= f.hidden_field :user_id%>
   <div id="posttitle">
+
     <div class="field">
       <%= f.label :title %>
       <%= f.text_field :title %>
@@ -313,15 +384,30 @@ textarea#post_area {
 </div>
 <%end%>
 
+ <% if signed_in? %>
+  <% if @user == current_user%>
+<div id="recommend">
+  <div id="recommendtext">
+    <h1>Recommended for you!</h1>
+  <p id="notice"><%= notice %></p>
+<div id="recommendation">
+<%if (@rand != nil)%>
+  <h2><%= @rtea.name %> </h2>
+  <%end%>
+<%end%>
+
+<%end%>
+</div>
+</div>
+</div>
+
 <div id="main">
   <div id="credits"></div>
 </div>
+
+  <div id="home">
+    <%= link_to image_tag("/assets/hometab.png", :border=>0), root_path%>
+  
+  </div>
 </body>
 </html>
-
-<p id="notice"><%= notice %></p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<%= link_to "Settings", edit_user_path(current_user) %>
